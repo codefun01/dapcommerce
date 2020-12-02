@@ -1,0 +1,14 @@
+<mat-grid-list [cols]="breakpoint" rowHeight="350px" gutterSize="20" (window:resize)="onResize($event)"
+    *ngIf="(items$|async) as items">
+    <mat-grid-tile *ngFor="let item of items.content.products">
+        <mat-card class="example-card">
+            <img mat-card-image [src]="item.image_url" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    {{item.name}}
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+
+</mat-grid-list>

@@ -1,0 +1,14 @@
+<mat-form-field floatLabel="never">
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput type="search" placeholder="Search here" class="search-input" [(ngModel)]="searchText">
+</mat-form-field>
+<mat-list *ngFor="let store of stores ">
+    <div mat-header >{{store.letter}}</div>
+    <mat-list-item *ngFor="let st of store.stores | filter: searchText;">
+       
+     
+        <img matListAvatar [src]="st.icon">
+        <h3 matLine> {{st.name}} </h3>
+        <mat-divider></mat-divider>
+    </mat-list-item>    
+</mat-list>
